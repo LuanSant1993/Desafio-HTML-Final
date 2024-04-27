@@ -1,16 +1,27 @@
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-ul { list-style: none; padding-left: 5px; }
-a { color:blue; text-decoration: none;}
+
+ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
 .bar {
     background-color: #f9f9fb;
-    padding:15px;
+    padding: 15px;
     border-top: solid 1px #cdcdcd;
     border-bottom: solid 1px #cdcdcd;
 }
+
 .content {
     max-width: 1440px;
     margin: auto;
@@ -18,18 +29,19 @@ a { color:blue; text-decoration: none;}
     display: grid;
     gap: 3rem;
     grid-template-areas: "sidebar main anchors";
-    grid-template-columns: minmax(0,15rem) minmax(0,2.5fr) minmax(0,15rem);
+    grid-template-columns: minmax(0, 15rem) minmax(0, 2.5fr) minmax(0, 15rem);
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
 .footer {
     min-height: 100px;
     border-top: solid 1px #cdcdcd;
 }
+
 .anchors {
     border-left: solid 1px #cdcdcd;
     padding-left: 15px;
-    
 }
 
 .anchors ul {
@@ -40,14 +52,13 @@ a { color:blue; text-decoration: none;}
 .anchors li a {
     display: block;
     margin-bottom: 10px;
-    text-decoration: none; 
-    
+    text-decoration: none;
 }
-
 
 .sidebar {
     border-right: solid 1px #cdcdcd;
 }
+
 figure {
     text-align: center;
 }
@@ -62,17 +73,81 @@ header {
 }
 
 header .logo {
-    margin-right: 20px; 
+    margin-right: 20px;
 }
-
 
 header h1 {
     margin: 10px;
     color: rgb(136, 0, 0);
 }
 
-
 .title-wrapper {
     flex: 50;
 }
 
+:root {
+    --background-color-light: #ffffff;
+    --text-color-light: #ffffff;
+    --background-color-dark: #000000;
+    --text-color-dark: #ffffff;
+}
+
+[data-theme="dark"] {
+    --background-color: var(--background-color-dark);
+    --text-color: var(--text-color-light);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.tema button {
+    align-self: flex-end;
+    font-size: 16px;
+    padding: 8px 16px;
+    background: #ffffff;
+    box-sizing: border-box;
+    border-radius: 50px;
+    border: 2px solid #0E1D2F;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.dark .tema button {
+    color: #ffffff; /* Letras brancas */
+    background: #1c1c1c;
+    box-sizing: border-box;
+    border-radius: 100px;
+    border: 2px solid #f7f7f7;
+}
+
+.dark {
+    background: linear-gradient(236.85deg, #080808 27.26%, #050505 96.03%);
+}
+
+.dark body {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+.dark .container {
+    background: #333439;
+    color: #ffffff; 
+}
+
+.dark .portfolio {
+    color: #ffffff; 
+}
+
+.dark .bar {
+    background-color: #080808;
+}
+
+.light h2, .light p {
+    color: black; 
+}
+
+.dark h1, .dark h2, .dark p {
+    color: white; 
+}
